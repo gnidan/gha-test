@@ -16,4 +16,4 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: Echo secrets
-      run: echo {{ secrets }}
+      run: echo ${{ secrets }}
