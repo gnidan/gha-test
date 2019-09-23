@@ -11,12 +11,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
     steps:
     - uses: actions/checkout@v1
     - name: Echo secrets
       run: echo ${{ secrets.FOO }}
       if: github.event_name == 'pull_request' && !github.event.pull_request.base.repo.fork
-  
