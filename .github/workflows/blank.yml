@@ -17,4 +17,4 @@ jobs:
         echo test, and deploy your project.
     - name: Echo secrets
       run: echo ${{ secrets.FOO }}
-      if: secrets.FOO
+      if: !!secrets.FOO == true
