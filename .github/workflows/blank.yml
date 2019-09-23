@@ -19,7 +19,7 @@ jobs:
     - name: Pre-echo
       run: echo pre
     - name: Echo secrets
-      run: echo ${{ secrets.FOO }}
+      run: echo '${{ toJson(github.event.pull_request.base.repo }}'
       if: github.event_name == 'pull_request' && !github.event.pull_request.base.repo.fork
     - name: Post-echo
       run: echo post
