@@ -9,7 +9,13 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
+    - name: Echo pre
+      run: echo pre
+
     - name: Echo secrets
       run: echo ${{ secrets.FOO }}
       if: github.event_name == 'pull_request' && !github.event.pull_request.base.repo.fork
+    - name: Echo post
+      run: echo post
+
   
