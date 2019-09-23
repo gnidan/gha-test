@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Echo secrets
-      run: echo '${{ toJson(github.event.pull_request.base.repo.fork) }}'
-      if: github.event_name == 'pull_request'
-      
+      run: echo ${{ secrets.FOO }}
+      if: github.event_name == 'pull_request' && !github.event.pull_request.base.repo.fork
+  
