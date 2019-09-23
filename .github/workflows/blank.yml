@@ -20,7 +20,7 @@ jobs:
       run: echo pre
     - name: Echo secrets
       run: echo ${{ secrets.FOO }}
-      if: github.event_name == 'pull_request' && !github.event.pull_request.base.repo.fork
+      if: github.event_name == 'pull_request' && !github.event.pull_request.head.repo.fork
     - name: Post-echo
       run: echo post
   
