@@ -10,5 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Echo secrets
-      run: echo '${{ toJson(github) }}'
+      run: echo '${{ toJson(github.event.pull_request.base) }}'
+      if: github.event_name == 'pull_request'
       
